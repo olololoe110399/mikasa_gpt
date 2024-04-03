@@ -135,10 +135,6 @@ class _HomePageState extends ConsumerState<HomePage> {
                                 'user',
                                 question,
                               );
-
-                          final res = await repository.createMessage(
-                            messageHistory: ref.read(messageListProvider),
-                          );
                           final timestamp =
                               DateTime.now().millisecondsSinceEpoch;
                           ref
@@ -147,9 +143,13 @@ class _HomePageState extends ConsumerState<HomePage> {
                               )
                               .add(
                                 'assistant',
-                                '',
+                                '...',
                                 timestamp: timestamp,
                               );
+
+                          final res = await repository.createMessage(
+                            messageHistory: ref.read(messageListProvider),
+                          );
 
                           res.fold(
                             (l) => print(l),
