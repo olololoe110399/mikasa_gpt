@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:typed_data';
 
-import 'package:auto_interviewer/helper/sse_event_sink.dart';
-import 'package:auto_interviewer/model/sse_message.dart';
+import 'package:mikasa_gpt/helper/sse_event_sink.dart';
+import 'package:mikasa_gpt/model/sse_message.dart';
 
 StreamTransformer<Uint8List, List<int>> unit8Transformer =
     StreamTransformer.fromHandlers(

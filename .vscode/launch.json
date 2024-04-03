@@ -5,18 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "auto_interviewer",
+            "name": "mikasa_gpt",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "auto_interviewer (profile mode)",
+            "name": "mikasa_gpt (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "auto_interviewer (release mode)",
+            "name": "mikasa_gpt (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"

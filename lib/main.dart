@@ -1,5 +1,5 @@
-import 'package:auto_interviewer/chat_page.dart';
-import 'package:auto_interviewer/core/config.dart';
+import 'package:mikasa_gpt/core/config.dart';
+import 'package:mikasa_gpt/ui/page/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -18,12 +18,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Auto Interviewer',
+      title: 'MikasaGPT',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.blueAccent,
+        ),
         useMaterial3: true,
+        fontFamily: 'nishiki_teki',
       ),
-      home: const ChatPage(),
+      home: const HomePage(),
     );
   }
 }

@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:auto_interviewer/model/sse_message.dart';
+import 'package:mikasa_gpt/model/sse_message.dart';
 
 class SseEventSink implements EventSink<String> {
   final EventSink<SseMessage> _eventSink;

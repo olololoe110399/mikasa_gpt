@@ -19,5 +19,5 @@ class Env {
 
   String get elevenlabApiKey => _get('ELEVENLABS_API_KEY');
   String get anthropicApiKey => _get('ANTHROPIC_API_KEY');
-  String get voiceId => 'IKne3meq5aSn9XLyUdCD';
+  String get voiceId => 'vGQNBgLaiM3EdZtxIiuY';
 }

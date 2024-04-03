@@ -1,4 +1,4 @@
-import 'package:auto_interviewer/helper/log_utils.dart';
+import 'package:mikasa_gpt/helper/log_utils.dart';
 import 'package:dio/dio.dart';
 
 class CustomLogInterceptor extends InterceptorsWrapper {

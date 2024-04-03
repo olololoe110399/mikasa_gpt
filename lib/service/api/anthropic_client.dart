@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:typed_data';
-import 'package:auto_interviewer/model/message.dart';
-import 'package:auto_interviewer/service/api/custom_log_interceptor.dart';
-import 'package:auto_interviewer/service/api/type_exception.dart';
+import 'package:mikasa_gpt/model/message.dart';
+import 'package:mikasa_gpt/service/api/custom_log_interceptor.dart';
+import 'package:mikasa_gpt/service/api/type_exception.dart';
 import 'package:dio/dio.dart';
 
 class AnthropicClient {

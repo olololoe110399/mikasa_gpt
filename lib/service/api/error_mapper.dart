@@ -1,4 +1,4 @@
-import 'package:auto_interviewer/service/api/type_exception.dart';
+import 'package:mikasa_gpt/service/api/type_exception.dart';
 
 class ErrorMapper {
   static String mapError(dynamic error) {

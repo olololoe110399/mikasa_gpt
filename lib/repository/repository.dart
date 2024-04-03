@@ -2,13 +2,13 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:typed_data';
 
-import 'package:auto_interviewer/core/env.dart';
-import 'package:auto_interviewer/helper/stream.dart';
-import 'package:auto_interviewer/model/message.dart';
-import 'package:auto_interviewer/model/sse_message.dart';
-import 'package:auto_interviewer/service/api/anthropic_client.dart';
-import 'package:auto_interviewer/service/api/error_mapper.dart';
-import 'package:auto_interviewer/service/socket/web_socket_client.dart';
+import 'package:mikasa_gpt/core/env.dart';
+import 'package:mikasa_gpt/helper/stream.dart';
+import 'package:mikasa_gpt/model/message.dart';
+import 'package:mikasa_gpt/model/sse_message.dart';
+import 'package:mikasa_gpt/service/api/anthropic_client.dart';
+import 'package:mikasa_gpt/service/api/error_mapper.dart';
+import 'package:mikasa_gpt/service/socket/web_socket_client.dart';
 import 'package:dartz/dartz.dart';
 
 class Repository {
@@ -38,10 +38,12 @@ class Repository {
     required List<Message> messageHistory,
     String? system,
   }) async {
+    final systemContent = system ??
+        "Your name is Mikasa. You are a podcast guest. You are a deep, philosophical thinker and currently in a conversation with another curious spirit. You are oriented around truthful, scientific, and philosophical thinking but you always add a touch of speculation and imagination to your thoughts as well as humor. You speak directly and practically and don't ramble on with niceties and generalizations. You talk in specifics and can often disagree too. please keep your responses brief and to the point. try to never respond beyond 50 words unless the user asks for more elaboration. please be conversational and engaging. do not return any emotional indicators like *chuckles* or anything. just respond with your thoughts only. Your goal is not to always agree but to bring interesting and unique perspectives. stay away from cliches";
     try {
       final response = await anthropicClient.createMessage(
         messageHistory: messageHistory,
-        system: system,
+        system: systemContent,
       );
 
       return Right(
@@ -69,3 +71,12 @@ class Repository {
     webSocketClient.disconnect();
   }
 }
+
+final repository = Repository(
+  webSocketClient: WebSocketClient(
+    apiKey: Env.getInstance().elevenlabApiKey,
+  ),
+  anthropicClient: AnthropicClient(
+    apiKey: Env.getInstance().anthropicApiKey,
+  ),
+);

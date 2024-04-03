@@ -1,5 +1,5 @@
 import 'package:async/async.dart';
-import 'package:auto_interviewer/core/env.dart';
+import 'package:mikasa_gpt/core/env.dart';
 
 class Config {
   factory Config.getInstance() {
